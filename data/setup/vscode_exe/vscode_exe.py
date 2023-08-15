@@ -18,7 +18,7 @@ def run() -> None:
     Returns:
         None
     """
-    vscode: Path = Path(f"{LOCALAPPDATA}/UnPySide/vscode/Code.exe")
+    vscode: Path = Path(f"{LOCALAPPDATA}/UnPySide/vscode_exe/Code.exe")
     if vscode.exists():
         cmd = f"{vscode} {WORKSPACE_DIR}"
         p = subprocess.Popen(cmd)
