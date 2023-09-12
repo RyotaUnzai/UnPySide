@@ -4,8 +4,7 @@ import sys
 from pathlib import Path
 
 LOCALAPPDATA = os.getenv("LOCALAPPDATA")
-WORKSPACE_DIR = Path(sys.argv[0]).resolve().parents
-print(WORKSPACE_DIR)
+WORKSPACE_DIR = Path(sys.argv[0]).resolve().parent
 
 def run() -> None:
     """
@@ -18,7 +17,7 @@ def run() -> None:
     Returns:
         None
     """
-    vscode: Path = Path(f"{LOCALAPPDATA}/UnPySide/vscode_exe/Code.exe")
+    vscode: Path = Path(f"{LOCALAPPDATA}/UnPySide/vscode/Code.exe")
     if vscode.exists():
         cmd = f"{vscode} {WORKSPACE_DIR}"
         p = subprocess.Popen(cmd)
