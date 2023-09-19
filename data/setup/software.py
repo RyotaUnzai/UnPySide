@@ -1,7 +1,7 @@
 import threading
 
 
-class AbsSoftware:
+class AbstractSoftware:
     __lock = threading.Lock()
 
     @property
@@ -14,7 +14,11 @@ class AbsSoftware:
         ...
 
     def install(self) -> None:
+        """Install Software
+        """
         ...
 
     def uninstall(self) -> None:
+        """Uninstall Software
+        """
         ...
