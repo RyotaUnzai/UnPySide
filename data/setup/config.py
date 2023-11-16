@@ -38,8 +38,9 @@ class Validator:
             if isinstance(value, Path):
                 return resolve_env_path(value)
             return value
-
-        return validator(name, allow_reuse=True)(_validate_path)
+        print("path_validator")
+        r = validator(name, allow_reuse=True)(_validate_path)
+        return r
 
 
 class AbstractConfig(BaseModel):
@@ -50,9 +51,10 @@ class AbstractConfig(BaseModel):
     directly but should be subclassed.
 
     Attributes:
-        __path_validator: A class-level path validator for ensuring proper path format.
+        _path_validator: A class-level path validator for ensuring proper path format.
     """
-    __path_validator = Validator.path_validator("*")
+    _path_validator = Validator.path_validator("*")
+    print("AbstractConfig")
 
 
 class AbstractSoftWareConfig(AbstractConfig):
@@ -72,6 +74,9 @@ class AbstractSoftWareConfig(AbstractConfig):
     """
     _version: str = Field(alias="Version")
     _install_dir: Path = Field(alias="InstallDir")
+
+    def __init__(self, *args, **kwargs):
+        super(AbstractSoftWareConfig, self).__init__(*args, **kwargs)
 
     @property
     def version(self) -> str:
