@@ -1,0 +1,74 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        ".mypy_cache": true,
+        // ".venv": true,
+        // ".vscode": true,
+        ".python-version": true,
+        "pyproject.toml": true,
+    },
+    "files.associations": {
+        "*.json": "jsonc"
+    },
+    
+    // TAB サイズはスペース4つ
+    "editor.tabSize": 4,
+    // TAB ではなくスペースを使う
+    "editor.insertSpaces": true,
+    // ルーラー
+    "editor.rulers": [120],
+    // 入力中のフォーマットを無効化
+    "editor.formatOnType": false,
+    // ペースト時のフォーマットを無効化
+    "editor.formatOnPaste": false,
+    // 保存時のフォーマット
+    "editor.formatOnSave": false,
+    // 保存時のフォーマットモード
+    // - file: ファイル全体をフォーマット。
+    // - modifications: 変更点のみフォーマット（要ソース管理）
+    // - modificationsIfAvailable: 変更点のみフォーマット（要ソース管理）。ソース管理されていないとき、ファイル全体をフォーマット（file と同じ動作）。
+    "editor.formatOnSaveMode": "modificationsIfAvailable",
+
+    // 起動時に仮想環境を有効化
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    // 仮想環境の Python インタプリターを使う
+    "python.defaultInterpreterPath": "${env:LOCALAPPDATA}\\UnPySide\\python\\tools\\python.exe",
+    "python.analysis.extraPaths": [
+        "C:\\Program Files\\Autodesk\\Maya2023\\Python\\Lib\\site-packages"
+    ],
+    // 構文チェックを有効化
+    "python.linting.enabled": true,
+    // 保存時の構文チェックを有効化
+    "python.linting.lintOnSave": true,
+    // 構文チェックの pylint を無効化 (規定値が true なので明示的に無効化する必要がある)
+    "python.linting.pylintEnabled": false,
+    // 構文チェックの flake8 を有効化
+    "python.linting.flake8Enabled": true,
+    // 使用する flake8 のパス
+    // pyproject.toml を使うため pyproject-flake8 のパスを指定する必要がある
+    "python.linting.flake8Path": "${workspaceFolder}\\.venv\\Scripts\\pflake8.exe",
+    "flake8.args": [
+        "--max-line-length=200",
+    ],
+    // mypy を有効化
+    "python.linting.mypyEnabled": true,
+    // フォーマッターの black を有効化
+    "python.formatting.provider": "none",
+    // python ファイル固有の設定
+    "[python]": {
+        // 保存時の import 文のソートを有効化
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        // 保存時のフォーマットを有効化
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    // docstring は Google スタイルを使う
+    "autoDocstring.docstringFormat": "google"
+}
