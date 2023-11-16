@@ -1,5 +1,6 @@
-﻿$pythonVer = New-Object System.Version(3, 11, 3)
+$pythonVer = New-Object System.Version(3, 11, 3)
 $pipPackages = [ordered]@{
+    "pydantic" = New-Object System.Version(1, 10, 7);
     "black" = New-Object System.Version(23, 3, 0);
     "click" = New-Object System.Version(8, 1, 3);
     "colorama" = New-Object System.Version(0, 4, 6);
@@ -12,12 +13,12 @@ $pipPackages = [ordered]@{
     "pathspec" = New-Object System.Version(0, 11, 1);
     "platformdirs" = New-Object System.Version(3, 2, 0);
     "pycodestyle" = New-Object System.Version(2, 10, 0);
-    "pydantic" = New-Object System.Version(1, 10, 7);
     "pyflakes" = New-Object System.Version(3, 0, 1);
     "pyproject-flake8" = New-Object System.Version(6, 0, 0);
     "PyYAML" = New-Object System.Version(6, 0, 0);
     "tomli" = New-Object System.Version(2, 0, 1);
     "typing_extensions" = New-Object System.Version(4, 5, 0);
+    "rich" = New-Object System.Version(13, 7, 0);
 }
 
 Write-Output "Starting setup for UnPySidePy(Python)"
