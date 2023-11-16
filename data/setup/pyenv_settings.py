@@ -1,4 +1,4 @@
-from data.setup.config import AbstractConfig
+from config import AbstractConfig
 
 
 class PyenvConfig(AbstractConfig):
