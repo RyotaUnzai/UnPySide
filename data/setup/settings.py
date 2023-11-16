@@ -10,8 +10,15 @@ from pyenv_settings import PyenvConfig
 from unpysidepy_settings import UnPySideEnvConfig
 from vscode_settings import VSCodeConfig
 
+from logging import getLogger, basicConfig
+from rich.logging import RichHandler
 os.environ["WORK_SPACE_FOLDER"] = Path(__file__).parent.parent.parent.as_posix()
 
+FORMAT = "%(message)s"
+basicConfig(
+    level="NOTSET", format=FORMAT, datefmt="[%X]", handlers=[RichHandler()]
+)
+logger = getLogger("rich")
 
 class Settings(AbstractConfig):
     env_dir: Path = Field(alias="UnPySideDir")
@@ -27,12 +34,13 @@ class Settings(AbstractConfig):
     def __register_environment_variable(cls, v, values: dict, config, field: ModelField, **kwargs):
         # ルート直下の Path クラスにバインドするフィールドを環境変数に登録
         # pydantic により自動で呼び出されます
-        print(v)
         if isinstance(v, Path):
+            logger.debug(f"{field.alias}: {v}")
             os.environ[field.alias] = str(v)
+        else:
+            logger.info(f"{field.alias}: {v}")
         return v
 
-# TODO:
 with open(Path(__file__).parent / "setup-settings.yml") as file:
     obj = yaml.safe_load(file)
 
