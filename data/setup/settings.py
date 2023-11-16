@@ -2,10 +2,10 @@ import os
 from pathlib import Path
 
 import yaml
-from data.setup.config import AbstractConfig
 from pydantic import Field, validator
 from pydantic.fields import ModelField
 
+from config import AbstractConfig
 from pyenv_settings import PyenvConfig
 from unpysidepy_settings import UnPySideEnvConfig
 from vscode_settings import VSCodeConfig
