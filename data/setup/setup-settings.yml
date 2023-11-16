@@ -1,0 +1,29 @@
+UnPySideDir: '%LOCALAPPDATA%\UnPySide'
+UnPySideCacheDir: '%TEMP%\UnPySide\Cache'
+InstallerDir: ${WORK_SPACE_FOLDER}\data\include
+UnPySidepy:
+    Version: 3.11.3
+    InstallDir: ${UnPySideDir}\python
+    InterpreterPath: ${UnPySideDir}\python\tools\python.exe
+Pyenv:
+    Version: 3.1.1
+    InstallDir: ${UnPySideDir}\pyenv
+VSCode:
+    Version: 1.84.2
+    InstallDir: ${UnPySideDir}\vscode
+    WorkSpaceDir: ${WORK_SPACE_FOLDER}
+    InstallerFileName: VSCode-win32-x64
+    InstallExtensions:
+        - Equinusocio.vsc-community-material-theme
+        - wayou.vscode-todo-highlight
+        - bierner.color-info
+        - ms-python.python
+        - ms-python.vscode-pylance
+        - ms-python.black-formatter
+        - ms-python.flake8
+        - ms-python.isort
+        - njpwerner.autodocstring
+        - streetsidesoftware.code-spell-checker
+        - spmeesseman.vscode-taskexplorer
+    UninstallExtensions:
+        - ms-toolsai.jupyter

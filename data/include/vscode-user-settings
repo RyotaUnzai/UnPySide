@@ -1,0 +1,162 @@
+{
+  "update.mode": "none",
+  "extensions.autoCheckUpdates": false,
+  "extensions.autoUpdate": false,
+  "telemetry.telemetryLevel": "off",
+  "extensions.ignoreRecommendations": true,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120,
+  "window.zoomLevel": -1,
+  "workbench.tree.indent": 16,
+  // ------ files
+  "files.eol": "\r\n",
+  "files.associations": {
+    "*.qss": "css",
+    "*.json.meta": "json",
+    "*.meta": "json",
+    "*.cgfx": "hlsl",
+    "*.spec": "python",
+    "*.pyr": "python"
+  },
+  // ------ colorInfo
+  "colorInfo.languages": [
+    {
+      "selector": "qss",
+      "colors": "css"
+    }
+  ],
+  "colorInfo.fields": [
+    "hex",
+    "rgb",
+    "cmyk",
+    "lab",
+    "alpha",
+    "preview-square-xl"
+  ],
+  // ------ todohighlight
+  "todohighlight.isCaseSensitive": true,
+  "todohighlight.isEnable": true,
+  "todohighlight.keywords": [
+    {
+      "text": "TEMP:",
+      "color": "#FFFFFF",
+      "border": "2px solid #fe7e80",
+      "borderRadius": "2px",
+      "backgroundColor": "#fe7e80"
+    }
+  ],
+  // ------ workbench
+  "workbench.colorTheme": "Community Material Theme High Contrast",
+  "workbench.colorCustomizations": {
+    "terminal.background": "#283630",
+    "terminal.foreground": "#E9E9F4",
+    "terminalCursor.background": "#E9E9F4",
+    "terminalCursor.foreground": "#E9E9F4",
+    "terminal.ansiBlack": "#283630",
+    "terminal.ansiBlue": "#62D6E8",
+    "terminal.ansiBrightBlack": "#626483",
+    "terminal.ansiBrightBlue": "#62D6E8",
+    "terminal.ansiBrightCyan": "#A1EFE4",
+    "terminal.ansiBrightGreen": "#EBFF87",
+    "terminal.ansiBrightMagenta": "#B45BCF",
+    "terminal.ansiBrightRed": "#EA51B2",
+    "terminal.ansiBrightWhite": "#F7F7FB",
+    "terminal.ansiBrightYellow": "#00F769",
+    "terminal.ansiCyan": "#A1EFE4",
+    "terminal.ansiGreen": "#EBFF87",
+    "terminal.ansiMagenta": "#B45BCF",
+    "terminal.ansiRed": "#EA51B2",
+    "terminal.ansiWhite": "#E9E9F4",
+    "terminal.ansiYellow": "#00F769",
+    "debugToolBar.background": "#800cec",
+    "editor.stackFrameHighlightBackground": "#800cec",
+    "editor.focusedStackFrameHighlightBackground": "#800cec",
+    "editor.inlineValuesBackground": "#800cec",
+    "editor.inlineValuesForeground": "#ffffff",
+    "editor.exceptionLabelForeground": "#800cec",
+    "editorLineNumber.activeForeground": "#EA51B2",
+    "editorCursor.foreground": "#fff",
+    "debugConsole.infoForeground": "#ffffff",
+    "debugConsole.warningForeground": "#e7d915",
+    "debugConsole.errorForeground": "#b91c1c",
+    "debugConsole.sourceForeground": "#800cec",
+    "debugConsole.foreground": "#800cec",
+    "tab.activeBackground": "#626483",
+    "tab.activeBorder": "#b91c1c"
+  },
+  "editor.tokenColorCustomizations": {
+    "[Community Material Theme Palenight]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "string.quoted.docstring"
+          ],
+          "settings": {
+            "foreground": "#e674b6"
+          }
+        },
+        {
+          "name": "Library function",
+          "scope": "support.function",
+          "settings": {
+            "foreground": "#66D9EF"
+          }
+        }
+      ]
+    }
+  },
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}//Sysnative//cmd.exe",
+        "${env:windir}//System32//cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "Windows PowerShell": {
+      "path": "C://WINDOWS//System32//WindowsPowerShell//v1.0//powershell.exe"
+    }
+  },
+  "cSpell.userWords": [
+    "debugpy",
+    "pytest",
+    "mypy",
+    "venv",
+    "isort",
+    "pyproject",
+    "unpyside",
+    "pyenv",
+    "pydantic",
+    "Sysnative",
+    "cgfx",
+    "hlsl",
+    "cmyk",
+    "todohighlight",
+    "Palenight",
+    "unpysidepy",
+    "pywin",
+    "LOCALAPPDATA",
+    "Equinusocio",
+    "wayou",
+    "bierner",
+    "pylance",
+    "autodocstring",
+    "njpwerner",
+    "toolsai",
+    "alloc",
+    "pyside",
+    "windir",
+    "mayapy",
+    "XBMLANGPATH",
+    "MAYA_DISABLE_CLIC_IPM"
+  ],
+  "security.workspace.trust.untrustedFiles": "open"
+}
