@@ -9,7 +9,7 @@ Pyenv:
     Version: 3.1.1
     InstallDir: ${UnPySideDir}\pyenv
 VSCode:
-    Version: 1.81.0
+    Version: 1.84.2
     InstallDir: ${UnPySideDir}\vscode
     WorkSpaceDir: ${WORK_SPACE_FOLDER}
     InstallerFileName: VSCode-win32-x64
