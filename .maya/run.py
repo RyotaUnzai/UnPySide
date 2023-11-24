@@ -9,33 +9,31 @@ from pathlib import Path
 
 def run() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--space-root-dir", type=Path, required=True)
-    parser.add_argument("--maya-ver", type=str, required=True)
+    parser.add_argument("--root-dir", type=Path, required=True)
+    parser.add_argument("--dcc-name", type=str, required=True)
+    parser.add_argument("--dcc-version", type=str, required=True)
     args = parser.parse_args()
 
-    space_root_dir: Path = args.space_root_dir
-    maya_ver: str = args.maya_ver
+    root_dir: Path = args.root_dir
+    dcc_name: str = args.dcc_name
+    dcc_version: str = args.dcc_version
 
     print("Arguments")
-    print(f"  SpaceRootDir: '{space_root_dir}'")
-    print(f"  MayaVer: {maya_ver}")
+    print(f"  SpaceRootDir: '{root_dir}'")
+    print(f"  DCCName: '{dcc_name}'")
+    print(f"  Ver: {dcc_version}")
 
-    # TODO: 暫定的にここでコマンドライン引数からのスペースディレクトリ指定を環境変数にセット
-    os.environ["RUNSPACE_ROOT_DIR"] = str(space_root_dir)
+    os.environ["UNPYSIDE_ROOT_DIR"] = str(root_dir)
 
-    # アプリパッケージ呼び出しのためにソースコードフォルダーを sys.path に追加
-    source_path = space_root_dir / "src"
+    source_path = root_dir / "lib"
     print(f"Add to sys.path '{source_path}'")
     sys.path.append(str(source_path))
 
-    # アプリパッケージのインポート
-    app_pkg_path = f"Core.Maya{maya_ver}"
-    print(f"Import '{app_pkg_path}'")
-    app_module = import_module(app_pkg_path)
-
-    app_launcher = app_module.AppLauncher(space_root_dir)
-
-    app_launcher.launch()
+    dcc_package_path = f"DCC.{dcc_name}.{dcc_name}{dcc_version}"
+    print(f"Import '{dcc_package_path}'")
+    dcc_modules = import_module(dcc_package_path)
+    dcc_launcher = dcc_modules.Launcher(root_dir)
+    dcc_launcher.launch()
 
 
 if __name__ == "__main__":
