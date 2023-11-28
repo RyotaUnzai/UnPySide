@@ -1,0 +1,34 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONDONTWRITEBYTECODE": "1",
+                "PYTHONPATH": "${workspaceFolder}/src;${workspaceFolder}/dev",
+                "RUNSPACE_ROOT_DIR": "${workspaceFolder}"
+            }
+        },
+        {
+            "name": "Python: Launch Maya2023",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}\\.maya\\run.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--space-root-dir",
+                "${workspaceFolder}",
+                "--maya-ver",
+                "2023"
+            ],
+            "env": {
+                "PYTHONDONTWRITEBYTECODE": "1",
+                "PYTHONPATH": "${workspaceFolder}/src",
+            }
+        }
+    ]
+}

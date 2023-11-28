@@ -21,7 +21,7 @@ $pipPackages = [ordered]@{
     "rich" = New-Object System.Version(13, 7, 0);
 }
 
-Write-Output "Starting setup for UnPySidePy(Python)"
+Write-Output "Starting setup for Candybox(Python)"
 
 # Output the name and version of the Python and package to be installed
 Write-Output "Targets:"
@@ -41,16 +41,16 @@ $setupDir = (Get-Item $MyInvocation.MyCommand.Path).DirectoryName
 Set-Location $setupDir
 
 $nuGetExe = Join-Path $binDir "nuget.exe"
-$unpysideEnvDir = Join-Path $env:LOCALAPPDATA "UnPySide"
-$pythonDir = Join-Path $unpysideEnvDir "python"
-$pythonPath = Join-Path $unpysideEnvDir "python\\tools\\python.exe"
+$CandyboxEnvDir = Join-Path $env:LOCALAPPDATA "Candybox"
+$pythonDir = Join-Path $CandyboxEnvDir "python"
+$pythonPath = Join-Path $CandyboxEnvDir "python\\tools\\python.exe"
 
 function InstallPython {
     # Installing Python
     # `nuget.exe install python -Version 3.11.3 -ExcludeVersion -OutputDirectory .\deploy`
     $psi = New-Object System.Diagnostics.ProcessStartInfo
     $psi.FileName = $nuGetExe
-    $psi.Arguments = "install python -Version {0} -ExcludeVersion -OutputDirectory ""{1}""" -f $pythonVer.ToString(3), $unpysideEnvDir
+    $psi.Arguments = "install python -Version {0} -ExcludeVersion -OutputDirectory ""{1}""" -f $pythonVer.ToString(3), $CandyboxEnvDir
     $psi.UseShellExecute = $false
     $psi.CreateNoWindow = $false
     $p = [System.Diagnostics.Process]::Start($psi)
@@ -75,4 +75,4 @@ if (Test-Path $pythonDir) {
 
 InstallPython
 
-Write-Output "Completed setup for UnPySidePy (Python)"
+Write-Output "Completed setup for Candybox (Python)"
